@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Countries Repository
+Welcome to the Countries repository! This project is designed to provide data and functionality related to countries. Currently, it includes a TypeScript-based codebase with some CSS and JavaScript components.
 
-## Getting Started
+## Overview
+This repository contains:
 
-First, run the development server:
+TypeScript: 18,484 lines
+CSS: 338 lines
+JavaScript: 227 lines
+The project size is approximately 100 units. The repository has a main branch and currently has no forks.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Description
+No description provided.
+
+## Installation
+To set up the project locally, follow these steps:
+
+### Clone the Repository:
+
+```
+git clone https://github.com/yourusername/countries.git
+cd countries
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Install Dependencies:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Make sure you have Node.js installed. Then, run:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```
+npm install
+```
 
-## Learn More
+### Run the Project:
 
-To learn more about Next.js, take a look at the following resources:
+To start the development server, use:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+npm start
+```
+This will run the project locally and you should be able to access it at http://localhost:3000 (or the port specified in your configuration).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Contributing
+We welcome contributions to the project! To contribute:
 
-## Deploy on Vercel
+### Fork the Repository:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Click the "Fork" button at the top right of the repository page on GitHub to create your own copy.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Create a New Branch:
+
+```
+git checkout -b your-feature-branch
+```
+
+### Make Your Changes:
+
+Implement your changes and ensure they are well-tested.
+
+### Commit Your Changes:
+
+```
+git add .
+git commit -m "Add a meaningful commit message"
+```
+
+### Push Your Changes:
+
+```
+git push origin your-feature-branch
+```
+
+### Create a Pull Request:
+
+Go to the original repository and submit a pull request from your branch. Provide a clear description of the changes you’ve made.
+
+## Issues
+If you encounter any issues or have suggestions for improvements, please open an issue on the GitHub repository. Provide as much detail as possible so we can assist you effectively.
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Contact
+For any questions or further information, you can reach out to brunopa.lollato@gmail.com.
