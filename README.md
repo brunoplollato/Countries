@@ -6,7 +6,7 @@ This repository contains:
 
 TypeScript: 18,484 lines\
 CSS: 338 lines\
-JavaScript: 227 lines\
+JavaScript: 227 lines
 
 ## Description
 No description provided.
