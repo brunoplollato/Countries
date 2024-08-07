@@ -4,10 +4,9 @@ Welcome to the Countries repository! This project is designed to provide data an
 ## Overview
 This repository contains:
 
-TypeScript: 18,484 lines
-CSS: 338 lines
-JavaScript: 227 lines
-The project size is approximately 100 units. The repository has a main branch and currently has no forks.
+TypeScript: 18,484 lines\
+CSS: 338 lines\
+JavaScript: 227 lines\
 
 ## Description
 No description provided.
