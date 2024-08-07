@@ -26,7 +26,7 @@ cd countries
 Make sure you have Node.js installed. Then, run:
 
 ```
-npm install
+npm dev
 ```
 
 ### Run the Project:
