@@ -22,7 +22,7 @@ export default function CountryCard({ flag, name, population, region, capital, i
               className="object-fill rounded-none"
               src={flag || ''}
               width={264}
-              height={132}
+              height={185}
             />
           </CardHeader>
         </Skeleton>

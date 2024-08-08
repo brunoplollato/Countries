@@ -30,7 +30,7 @@ const regions = [
 
 export default function Results() {
   const [currentPage, setCurrentPage] = useState(1)
-  const [countries, setCountries] = useState(undefined)
+  const [countries, setCountries] = useState([])
   const [totalPages, setTotalPages] = useState(0)
   const [region, setRegion] = useState<string>('');
   const [name, setName] = useState<string>('');
@@ -84,8 +84,8 @@ export default function Results() {
       {(!isLoading && countries) ? (
         <>
           <div className='flex flex-wrap gap-[75px] justify-center mb-5 h-full'>
-            {countries.length > 0 ?
-              countries.map((country: any) => (
+            {countries?.length > 0 ?
+              countries?.map((country: any) => (
                 <CountryCard
                   key={country.id}
                   flag={country.flags_png}

@@ -47,7 +47,7 @@ export default function Country({ params }: CountryParams) {
                 src={country?.flags.png}
                 alt={country?.flags.alt || country?.name.common}
                 width={560}
-                height={401}
+                height="auto"
                 className="rounded-none"
               />
             </div>
@@ -102,19 +102,23 @@ export default function Country({ params }: CountryParams) {
             </ul>
             <p className="font-semibold text-[14px] mt-20 text-center">
               Border Countries
-              <ul className="flex flex-wrap justify-center max-w-[560px] gap-5 mt-5 mx-auto">
-                {country?.borders.map(item => (
-                  <li key={item}>
-                    <Skeleton isLoaded={!isLoading} className="rounded-md">
-                      <Button
-                        className="rounded-md bg-white dark:bg-[#2B3743] shadow-sm capitalize"
-                      >
-                        {item.toLowerCase()}
-                      </Button>
-                    </Skeleton>
-                  </li>
-                ))}
-              </ul>
+              {country?.borders ? (
+                <ul className="flex flex-wrap justify-center max-w-[560px] gap-5 mt-5 mx-auto">
+                  {country?.borders?.map(item => (
+                    <li key={item}>
+                      <Skeleton isLoaded={!isLoading} className="rounded-md">
+                        <Button
+                          className="rounded-md bg-white dark:bg-[#2B3743] shadow-sm capitalize"
+                        >
+                          {item.toLowerCase()}
+                        </Button>
+                      </Skeleton>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="font-normal text-xs mt-5">no border countries</p>
+              )}
             </p>
           </div>
         </div>
