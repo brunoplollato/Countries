@@ -16,7 +16,7 @@ export default function SearchBar({ handleChange }: SearchBarProps) {
 
   const
     debouncedSearch = useCallback(debounce((value) => {
-      if (value.length >= 3)
+      if (value.length >= 3 || value.length === 0)
         handleChange(value);
     }, 1000), []);
 
