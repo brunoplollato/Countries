@@ -4,11 +4,10 @@ import { ThemeProvider } from "next-themes";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ weight: ["400", "700", "900"] });
+const inter = Inter({ weight: ["400", "700", "900"], subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: "Contries",
-  viewport: "width=device-width, initial-scale=1"
 };
 
 export default function RootLayout({
@@ -20,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <ThemeProvider attribute="class">
         <body className={inter.className}>
-          <div className='flex flex-col pb-20'>
+          <div className='flex flex-col justify-start pb-20 h-full'>
             <Header />
             {children}
           </div>

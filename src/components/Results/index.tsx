@@ -1,5 +1,5 @@
 'use client'
-import { Select, SelectItem } from "@nextui-org/react";
+import { Select, SelectItem, Spinner } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import CountryCard from "../CountryCard";
 import CustomPagination from "../CustomPagination";
@@ -30,10 +30,11 @@ const regions = [
 
 export default function Results() {
   const [currentPage, setCurrentPage] = useState(1)
-  const [countries, setCountries] = useState([])
+  const [countries, setCountries] = useState(undefined)
   const [totalPages, setTotalPages] = useState(0)
   const [region, setRegion] = useState<string>('');
   const [name, setName] = useState<string>('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleOnChange = (value: number) => {
     setCurrentPage(value);
@@ -41,10 +42,12 @@ export default function Results() {
 
   const fetchCountries = async () => {
     try {
+      setIsLoading(true);
       const res = await fetch(`/api/countries?page=${currentPage}&pageSize=20&region=${region}&name=${name}`)
       const data = await res.json();
       setCountries(data.content);
       setTotalPages(data.totalPages);
+      setIsLoading(false)
     } catch (error) {
       console.error("🚀 ~ error:", error)
     }
@@ -55,8 +58,8 @@ export default function Results() {
   }, [currentPage, region, name])
 
   return (
-    <div>
-      <div className="container m-auto flex justify-between my-12">
+    <>
+      <div className="container m-auto flex justify-between my-12 h-full">
         <SearchBar handleChange={setName} />
         <Select
           label="Filter by Region"
@@ -78,14 +81,33 @@ export default function Results() {
           ))}
         </Select>
       </div>
-      <div className='flex flex-wrap gap-[75px] justify-center mb-5'>
-        {countries.map((country: any) => (
-          <CountryCard key={country.id} flag={country.flags_png} name={country.name} population={country.population} region={country.region} capital={country.capital as string[]} />
-        ))}
-      </div>
-      <div className="flex justify-center mt-[75px]">
-        <CustomPagination total={totalPages} page={currentPage} onChange={handleOnChange} />
-      </div>
-    </div>
+      {(!isLoading && countries) ? (
+        <>
+          <div className='flex flex-wrap gap-[75px] justify-center mb-5 h-full'>
+            {countries.length > 0 ?
+              countries.map((country: any) => (
+                <CountryCard
+                  key={country.id}
+                  flag={country.flags_png}
+                  name={country.name}
+                  population={country.population}
+                  region={country.region}
+                  capital={country.capital as string[]}
+                  isLoaded={!isLoading}
+                />
+              )) : (
+                <p className="text-sm">no results found</p>
+              )}
+          </div>
+          <div className="flex justify-center mt-[75px]">
+            <CustomPagination total={totalPages} page={currentPage} onChange={handleOnChange} />
+          </div>
+        </>
+      ) : (
+        <div className='h-full mx-auto'>
+          <Spinner label="Loading..." color="secondary" size="lg" />
+        </div>
+      )}
+    </>
   );
 }
