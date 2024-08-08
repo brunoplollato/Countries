@@ -3,7 +3,7 @@ import ArrowBackIcon from "@/components/Icons/arrowBack";
 import { CountryType } from "@/types/country";
 import { Button, Image, Skeleton } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 
 type CountryParams = {
   params: {
@@ -29,7 +29,8 @@ export default function Country({ params }: CountryParams) {
     }
   }
 
-  useEffect(() => { fetchCountry() }, []);
+  useLayoutEffect(() => { fetchCountry() }, []);
+
   return (
     <>
       <div className="container mx-auto h-[calc(100vh-160px)]">
