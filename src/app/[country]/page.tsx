@@ -32,7 +32,7 @@ export default function Country({ params }: CountryParams) {
   useEffect(() => { fetchCountry() }, []);
   return (
     <>
-      <div className="container mx-auto">
+      <div className="container mx-auto h-[calc(100vh-160px)]">
         <Button
           className="my-20 rounded-md bg-white dark:bg-[#2B3743] shadow-sm"
           startContent={<ArrowBackIcon />}
@@ -100,7 +100,7 @@ export default function Country({ params }: CountryParams) {
                 </Skeleton>
               </li>
             </ul>
-            <p className="font-semibold text-[14px] mt-20 text-center">
+            <div className="font-semibold text-[14px] mt-20 text-center">
               Border Countries
               {country?.borders ? (
                 <ul className="flex flex-wrap justify-center max-w-[560px] gap-5 mt-5 mx-auto">
@@ -119,7 +119,7 @@ export default function Country({ params }: CountryParams) {
               ) : (
                 <p className="font-normal text-xs mt-5">no border countries</p>
               )}
-            </p>
+            </div>
           </div>
         </div>
       </div>

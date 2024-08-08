@@ -8,6 +8,7 @@ const inter = Inter({ weight: ["400", "700", "900"], subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: "Contries",
+  description: "Discover the world at your fingertips. Find detailed information about any country with our app."
 };
 
 export default function RootLayout({
@@ -17,14 +18,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ThemeProvider attribute="class">
-        <body className={inter.className}>
+      <body className={inter.className}>
+        <ThemeProvider attribute="class">
           <div className='flex flex-col justify-start pb-20 h-full'>
             <Header />
             {children}
           </div>
-        </body>
-      </ThemeProvider>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
