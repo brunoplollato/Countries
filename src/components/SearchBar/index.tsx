@@ -31,7 +31,7 @@ export default function SearchBar({ handleChange }: SearchBarProps) {
       value={searchTerm}
       onChange={handleSearchChange}
       classNames={{
-        base: ["max-w-[480]", "w-full"],
+        base: ["max-w-[480px]", "w-full"],
         inputWrapper: ['bg-white', 'dark:bg-[#2B3743]', "py-[28px]", "rounded-md", 'dark:text-white'],
       }}
       startContent={

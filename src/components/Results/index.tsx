@@ -64,7 +64,7 @@ export default function Results() {
         <Select
           label="Filter by Region"
           classNames={{
-            base: "max-w-[200]",
+            base: "max-w-[200px]",
             trigger: ['bg-white', 'dark:bg-[#2B3743]', "rounded-md"],
             popoverContent: ["rounded-md", "shadow-none", 'dark:bg-[#2B3743]', 'dark:text-white']
           }}
