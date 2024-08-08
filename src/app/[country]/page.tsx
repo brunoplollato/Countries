@@ -94,7 +94,7 @@ export default function Country({ params }: CountryParams) {
                   Currencies: <span className="font-normal">{country && Object.values(country?.currencies).flatMap(currency => currency.name).join(", ") || ''}</span>
                 </Skeleton>
               </li>
-              <li className="font-semibold text-[14px]">
+              <li className="font-semibold text-[14px] w-72">
                 <Skeleton isLoaded={!isLoading} className="h-[14px] rounded-full mb-1">
                   Languages: <span className="font-normal">{country && Object.values(country?.languages).join(', ')}</span>
                 </Skeleton>
